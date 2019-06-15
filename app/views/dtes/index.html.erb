@@ -1,0 +1,64 @@
+<h2>Dtes Emitidos - Empresa "<%= @empresa[:razonsocial] %>"</h2>
+<hr>
+<% @dtes.each do |f| %>
+
+<TABLE >
+	<TR>
+    <TH>Fecha</TH>
+		<TD><%= DateTime.strptime(f["fecha"],'%s').strftime("%d/%m/%Y %H:%M:%S") %></TD>
+  </TR>
+  <TR>
+    <TH>Fecha</TH>
+		<TD><%= f["fecha"] %></TD>
+  </TR>
+  <TR>
+    <TH>Tipo</TH>
+		<TD><%= f["tipo"] %></TD>
+  </TR>
+  <TR>
+    <TH>Folio</TH>
+		<TD><%= f["folio"] %></TD>
+  </TR>
+  <TR>
+    <TH>Emisor</TH>
+		<TD><%= f["emisor_rut"] %></TD>
+  </TR>
+  <TR>
+    <TH>Receptor</TH>
+		<TD><%= f["receptor_rut"] %></TD>
+  </TR>
+  <TR>
+    <TH>Items</TH>
+		<TD>
+
+      <table >
+         <tr>
+            <td>Monto</td>
+            <td>Descripción</td>
+            <td>Iva</td>
+        </tr>
+        <% sum=0 %>
+        <% f[:items].each do |i| %>
+          <tr>
+              <td><%= i["monto"] %></td>
+              <td><%= i["descripcion"] %></td>
+              <td><%= i["iva"] %></td>
+          </tr>
+          <% sum += i["monto"].to_i %>
+        <% end %>
+      </table>
+
+    </TD>
+  </TR>
+  <TR>
+    <TH>Total</TH>
+		<TD><%= sum %></TD>
+  </TR>
+</TABLE>
+<hr>
+<% end %>
+
+<br>
+<br>
+
+<a href="/empresas">Back</a>
