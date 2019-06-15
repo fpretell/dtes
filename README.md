@@ -37,6 +37,10 @@ Este proyecto actualmente trabaja con :
       ```
       rails server
       ```
+  6. Abrir en navegador:
+      ```
+      http://localhost:3000/empresas
+      ```
 
 ## End-points
 
