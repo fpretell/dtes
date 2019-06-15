@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # fpretell/dtes
 
 ## Descripción
@@ -48,3 +49,7 @@ Este proyecto actualmente trabaja con :
   * ```GET /dtes/:rut```
 
     Permite visualizar los DTEs de la empresa con rut ":rut" ordenados por fecha descendente.
+=======
+# dtes
+Listado de DTEs
+>>>>>>> 7a7500aefa0d9eb26de6675fd78a427b664ce4dd
